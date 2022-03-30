@@ -6,9 +6,9 @@ namespace Task_30._03._2022.Models
 {
     class CustomList <T>
     {
-        private T[] array;
-        private int Capacity;
-        private int _Count;
+        private  T[] array;
+        private int _Capacity;
+        private int _Count=0;
 
         public CustomList()
         {
@@ -26,14 +26,16 @@ namespace Task_30._03._2022.Models
             }
         }
         public void Add(T number)
-        {
-
+        {    
+            Array.Resize(ref array, array.Length + 1);
+            array[array.Length - 1] = number;
+            Console.WriteLine(number);
         }
 
 
         public void Clear()
         {
-            array = new T[Capacity];
+            array = new T[_Capacity];
             _Count = 0;
         }
         public bool Exist(T Number)
@@ -45,12 +47,12 @@ namespace Task_30._03._2022.Models
             }
             return false;
         }
-        /*
+
         public void Remove(T Number)
         {
-
+            int index = IndexOf(Number);
+            Remove(Number);
         }
-        */
         public void Reverse()
         {
             Array.Reverse(array);

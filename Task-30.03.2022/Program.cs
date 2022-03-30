@@ -20,12 +20,11 @@ namespace Task_30._03._2022
             list.Add(45);
             list.Add(50);
 
-
+            
             Console.WriteLine(list.IndexOf(3));
             Console.WriteLine("-------------------");
             Console.WriteLine(list.LastIndexOf(4));
             Console.WriteLine("--------------------");
-
 
         }
     }
